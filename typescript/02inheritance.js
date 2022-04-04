@@ -26,4 +26,10 @@ class Customer extends Contact {
         //}
     }
 }
-    
+function checkName(namableObject) {
+    console.log(namableObject.name);
+}
+checkName({
+    name: 'test',
+    getLowerName: function () { return 'test'; },
+});

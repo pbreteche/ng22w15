@@ -29,3 +29,19 @@ class Customer extends Contact {
     //    return this.name.length;
     //}
 }
+
+// Possibilité d'utiliser classes et interfaces pour typer
+function checkName(namableObject: Namable): void {
+    console.log(namableObject.name);    
+}
+
+// Un objet est compatible avec le type s'il est conforme
+// même s'il est non-typé ou pas du même type
+checkName({
+    name: 'test',
+    getLowerName: function() {return 'test'},
+})
+
+// Possibilité de typer si on souhaite un type différent
+// de celui inféré par l'affectation
+const myContact: Contact = new Customer();
