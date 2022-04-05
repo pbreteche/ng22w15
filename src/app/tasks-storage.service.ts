@@ -6,7 +6,7 @@ const TASKS_ITEM = 'app.tasks';
 @Injectable({
   providedIn: 'root'
 })
-export class TasksLoaderService {
+export class TasksStorageService {
 
   load(): string[] {
     let taskString = localStorage.getItem(TASKS_ITEM);
@@ -14,5 +14,9 @@ export class TasksLoaderService {
       return tasksMock;
     }
     return JSON.parse(taskString);
+  }
+
+  save(tasks: string[]) {
+    localStorage.setItem(TASKS_ITEM, JSON.stringify(tasks));
   }
 }

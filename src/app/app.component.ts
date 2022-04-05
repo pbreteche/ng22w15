@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TasksLoaderService } from './tasks-loader.service';
+import { TasksStorageService } from './tasks-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +11,18 @@ export class AppComponent {
   tasks: string[];
   newTask = '';
 
-  constructor(private loader: TasksLoaderService) {
-    this.tasks = loader.load();
+  constructor(private storage: TasksStorageService) {
+    this.tasks = storage.load();
   }
 
   delete(i: number): void {
     this.tasks.splice(i, 1);
+    this.storage.save(this.tasks);
   }
 
   add(): void {
     this.tasks.push(this.newTask);
     this.newTask = '';
+    this.storage.save(this.tasks);
   }
 }
