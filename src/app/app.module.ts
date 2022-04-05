@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
 import { TitleComponent } from './title/title.component';
 import { NavComponent } from './nav/nav.component';
+import { CreateTemplateComponent } from './create-template/create-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailComponent,
     TitleComponent,
-    NavComponent
+    NavComponent,
+    CreateTemplateComponent
   ],
   imports: [
     BrowserModule,

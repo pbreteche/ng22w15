@@ -1,0 +1,18 @@
+<form #taskForm="ngForm">
+    <div>
+        <label for="task-name">Nom</label>
+        <input [(ngModel)]="task.name" name="name" id="task-name" required>
+    </div>
+    <div>
+        <label for="task-deadline">Échéance</label>
+        <input [(ngModel)]="task.deadline" name="deadline" id="task-deadline" type="date">
+    </div>
+    <div>
+        <label for="task-description">Échéance</label>
+        <textarea [(ngModel)]="task.description" name="description" id="task-description">
+        </textarea>
+    </div>
+    <button [disabled]="taskForm.invalid">Ajouter</button>
+</form>
+
+<div class="debug">{{ task | json }}</div>
