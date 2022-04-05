@@ -18,6 +18,10 @@ export class AppComponent {
     this.selectedTask = this.tasks[0];
   }
 
+  select(task: Task): void {
+    this.selectedTask = task;
+  }
+
   delete(i: number): void {
     this.tasks.splice(i, 1);
     this.storage.save(this.tasks);

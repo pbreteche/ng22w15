@@ -8,5 +8,14 @@ ul {
 
     li {
         padding: .5em;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline dotted;
+            }
+        }
     }
 }
