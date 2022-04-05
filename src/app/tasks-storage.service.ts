@@ -14,7 +14,13 @@ export class TasksStorageService {
     if (!taskString) {
       return tasksMock;
     }
-    return JSON.parse(taskString);
+    return JSON.parse(taskString).map((task: Task) => {
+      if (task.deadline) {
+        task.deadline = new Date(task.deadline)
+      }
+
+      return task;
+    });
   }
 
   save(tasks: Task[]) {
