@@ -19,7 +19,7 @@ export class NavComponent {
   }
   
   select(task: Task): void {
-    this.selectedTaskService.task = task;
+    this.selectedTaskService.select(task);
   }
 
   delete(i: number): void {
