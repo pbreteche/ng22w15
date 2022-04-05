@@ -8,7 +8,6 @@ import { TasksStorageService } from './tasks-storage.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Liste de tâches';
   tasks: Task[];
   newTask = new Task();
   selectedTask?: Task;
