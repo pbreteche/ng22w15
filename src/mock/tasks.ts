@@ -3,7 +3,7 @@ import { Task, TaskState } from "src/app/task";
 export const tasks: Task[] = [
     {
         name: 'installer NodeJS',
-        deadline: undefined,
+        deadline: new Date('2022-04-04'),
         description: 'Nécessaire à l\'environnement',
         state: TaskState.InProgress
     },

@@ -11,9 +11,11 @@ export class AppComponent {
   title = 'Liste de tâches';
   tasks: Task[];
   newTask = new Task();
+  selectedTask?: Task;
 
   constructor(private storage: TasksStorageService) {
     this.tasks = storage.load();
+    this.selectedTask = this.tasks[0];
   }
 
   delete(i: number): void {

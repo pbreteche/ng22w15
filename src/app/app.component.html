@@ -1,4 +1,4 @@
-<article>
+<nav>
 <h1>{{ title }}</h1>
 <p>Notre premier composant Angular affiche la valeur de sa propriété titre.</p>
 <ul>
@@ -8,4 +8,15 @@
         <button aria-label="Supprimer" (click)="delete(i)">❌</button>
     </li>
 </ul>
+</nav>
+<article *ngIf="selectedTask">
+    <h1>{{ selectedTask.name }}</h1>
+    <dl>
+        <dt>Échéance :</dt>
+        <dd>{{ selectedTask.deadline?.toLocaleDateString() }}</dd>
+        <dt>Description :</dt>
+        <dd>{{ selectedTask.description }}</dd>
+        <dt>État</dt>
+        <dd>{{ selectedTask.state }}</dd>
+    </dl>
 </article>
