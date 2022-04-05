@@ -9,6 +9,7 @@ import { tasks } from '../mock/tasks';
 export class AppComponent {
   title = 'Liste de tâches';
   tasks = tasks;
+  newTask = '';
 
   delete(i: number): void {
     this.tasks.splice(i, 1);
