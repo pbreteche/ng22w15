@@ -14,4 +14,9 @@ export class AppComponent {
   delete(i: number): void {
     this.tasks.splice(i, 1);
   }
+
+  add(): void {
+    this.tasks.push(this.newTask);
+    this.newTask = '';
+  }
 }
