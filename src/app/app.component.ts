@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tasks } from '../mock/tasks';
+import { TasksLoaderService } from './tasks-loader.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,12 @@ import { tasks } from '../mock/tasks';
 })
 export class AppComponent {
   title = 'Liste de tâches';
-  tasks = tasks;
+  tasks: string[];
   newTask = '';
+
+  constructor(private loader: TasksLoaderService) {
+    this.tasks = loader.load();
+  }
 
   delete(i: number): void {
     this.tasks.splice(i, 1);
