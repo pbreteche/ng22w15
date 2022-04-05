@@ -1,0 +1,11 @@
+<article *ngIf="task">
+    <h1>{{ task.name }}</h1>
+    <dl>
+        <dt>Échéance :</dt>
+        <dd>{{ task.deadline?.toLocaleDateString() }}</dd>
+        <dt>Description :</dt>
+        <dd>{{ task.description }}</dd>
+        <dt>État</dt>
+        <dd>{{ task.state }}</dd>
+    </dl>
+</article>
