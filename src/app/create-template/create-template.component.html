@@ -1,7 +1,8 @@
-<form #taskForm="ngForm">
+<form #taskForm="ngForm" (ngSubmit)="save(); taskForm.reset()">
     <div>
+        <p class="help" [hidden]="taskName.untouched || taskName.valid">Le nom est obligatoire</p>
         <label for="task-name">Nom</label>
-        <input [(ngModel)]="task.name" name="name" id="task-name" required>
+        <input [(ngModel)]="task.name" name="name" id="task-name" required #taskName="ngModel">
     </div>
     <div>
         <label for="task-deadline">Échéance</label>

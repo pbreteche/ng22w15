@@ -26,4 +26,10 @@ export class TasksStorageService {
 
     return tasks[0];
   }
+
+  push(task: Task): void {
+    const tasks = this.load();
+    tasks.push(task);
+    this.save(tasks);
+  }
 }
