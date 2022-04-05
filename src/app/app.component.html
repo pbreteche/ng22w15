@@ -2,9 +2,9 @@
 <h1>{{ title }}</h1>
 <p>Notre premier composant Angular affiche la valeur de sa propriété titre.</p>
 <ul>
-    <input [(ngModel)]="newTask" (keyup.enter)="add()"><button (click)="add()">Ajouter</button>
+    <input [(ngModel)]="newTask.name" (keyup.enter)="add()"><button (click)="add()">Ajouter</button>
     <li *ngFor="let task of tasks; index as i">
-        {{ task }}
+        {{ task.name }}
         <button aria-label="Supprimer" (click)="delete(i)">❌</button>
     </li>
 </ul>

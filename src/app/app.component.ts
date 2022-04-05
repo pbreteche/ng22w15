@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './task';
 import { TasksStorageService } from './tasks-storage.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { TasksStorageService } from './tasks-storage.service';
 })
 export class AppComponent {
   title = 'Liste de tâches';
-  tasks: string[];
-  newTask = '';
+  tasks: Task[];
+  newTask = new Task();
 
   constructor(private storage: TasksStorageService) {
     this.tasks = storage.load();
@@ -22,7 +23,7 @@ export class AppComponent {
 
   add(): void {
     this.tasks.push(this.newTask);
-    this.newTask = '';
+    this.newTask = new Task();
     this.storage.save(this.tasks);
   }
 }

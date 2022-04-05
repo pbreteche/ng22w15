@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { tasks as tasksMock } from 'src/mock/tasks';
+import { Task } from './task';
 
 const TASKS_ITEM = 'app.tasks';
 
@@ -8,7 +9,7 @@ const TASKS_ITEM = 'app.tasks';
 })
 export class TasksStorageService {
 
-  load(): string[] {
+  load(): Task[] {
     let taskString = localStorage.getItem(TASKS_ITEM);
     if (!taskString) {
       return tasksMock;
@@ -16,7 +17,7 @@ export class TasksStorageService {
     return JSON.parse(taskString);
   }
 
-  save(tasks: string[]) {
+  save(tasks: Task[]) {
     localStorage.setItem(TASKS_ITEM, JSON.stringify(tasks));
   }
 }
