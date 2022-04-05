@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
 import { TitleComponent } from './title/title.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailComponent,
-    TitleComponent
+    TitleComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

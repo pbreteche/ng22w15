@@ -20,4 +20,10 @@ export class TasksStorageService {
   save(tasks: Task[]) {
     localStorage.setItem(TASKS_ITEM, JSON.stringify(tasks));
   }
+
+  first(): Task {
+    let tasks = this.load();
+
+    return tasks[0];
+  }
 }

@@ -1,11 +1,3 @@
 <app-title></app-title>
-<nav>
-<ul>
-    <input [(ngModel)]="newTask.name" (keyup.enter)="add()"><button (click)="add()">Ajouter</button>
-    <li *ngFor="let task of tasks; index as i">
-        <a (click)="select(task)">{{ task.name }}</a>
-        <button aria-label="Supprimer" (click)="delete(i)">❌</button>
-    </li>
-</ul>
-</nav>
+<app-nav (taskSelected)="select($event)"></app-nav>
 <app-detail [task]="selectedTask"></app-detail>

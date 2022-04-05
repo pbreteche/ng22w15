@@ -8,27 +8,14 @@ import { TasksStorageService } from './tasks-storage.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  tasks: Task[];
   newTask = new Task();
   selectedTask?: Task;
 
   constructor(private storage: TasksStorageService) {
-    this.tasks = storage.load();
-    this.selectedTask = this.tasks[0];
+    this.selectedTask = this.storage.first();
   }
 
   select(task: Task): void {
     this.selectedTask = task;
-  }
-
-  delete(i: number): void {
-    this.tasks.splice(i, 1);
-    this.storage.save(this.tasks);
-  }
-
-  add(): void {
-    this.tasks.push(this.newTask);
-    this.newTask = new Task();
-    this.storage.save(this.tasks);
   }
 }
