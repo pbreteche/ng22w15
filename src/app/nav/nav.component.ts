@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { SelectedTaskService } from '../selected-task.service';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
 
@@ -9,15 +10,16 @@ import { TasksStorageService } from '../tasks-storage.service';
 })
 export class NavComponent {
   tasks: Task[];
-  @Output()
-  taskSelected = new EventEmitter<Task>();
 
-  constructor(private storage: TasksStorageService) {
+  constructor(
+    private storage: TasksStorageService,
+    private selectedTaskService: SelectedTaskService
+  ) {
     this.tasks = storage.load();
   }
   
   select(task: Task): void {
-    this.taskSelected.emit(task);
+    this.selectedTaskService.task = task;
   }
 
   delete(i: number): void {

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SelectedTaskService } from '../selected-task.service';
 import { Task } from '../task';
 
 @Component({
@@ -7,6 +8,8 @@ import { Task } from '../task';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent {
-  @Input()
   task?: Task;
+  constructor(private selectedTaskService: SelectedTaskService) {
+    this.task = selectedTaskService.task;
+  }
 }
