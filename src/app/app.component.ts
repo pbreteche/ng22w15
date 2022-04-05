@@ -9,7 +9,7 @@ import { TasksStorageService } from './tasks-storage.service';
 })
 export class AppComponent {
   newTask = new Task();
-  selectedTask?: Task;
+  selectedTask: Task;
 
   constructor(private storage: TasksStorageService) {
     this.selectedTask = this.storage.first();
