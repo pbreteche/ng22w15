@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
 
@@ -13,6 +14,7 @@ export class CreateTemplateComponent {
 
   constructor(
     private tasksStorage: TasksStorageService,
+    private router: Router
   ) {}
 
   save(): void {
@@ -20,6 +22,7 @@ export class CreateTemplateComponent {
       this.task.deadline = new Date(this.task.deadline);
     }
     this.tasksStorage.push(this.task);
-    this.task = new Task();
+    this.router.navigate(['task', this.task.id]);
+    this.task = new Task(); 
   }
 }
