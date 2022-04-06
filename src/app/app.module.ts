@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { CreateTemplateComponent } from './create-template/create-template.component';
 import { CreateReactiveComponent } from './create-reactive/create-reactive.component';
 import { MinDateDirective } from './min-date.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MinDateDirective } from './min-date.directive';
     NavComponent,
     CreateTemplateComponent,
     CreateReactiveComponent,
-    MinDateDirective
+    MinDateDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import { MinDateDirective } from './min-date.directive';
       {path: '', component: NavComponent, pathMatch: 'full'},
       {path: 'task/new', component: CreateTemplateComponent, pathMatch: 'full'},
       {path: 'task/:id', component: DetailComponent, pathMatch: 'full'},
+      {path: '**', component: PageNotFoundComponent}
     ])
   ],
   providers: [],
