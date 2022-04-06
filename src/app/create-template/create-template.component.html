@@ -1,8 +1,18 @@
 <form #taskForm="ngForm" (ngSubmit)="save(); taskForm.reset()">
     <div>
-        <p class="help" [hidden]="taskName.untouched || taskName.valid">Le nom est obligatoire</p>
+        <p class="help" [hidden]="taskName.untouched || (!taskName.errors?.['required'])">
+            Le nom est obligatoire
+        </p>
+        <p class="help" [hidden]="taskName.untouched || (!taskName.errors?.['minlength'])">
+            Le nom doit comporter au moins 5 caractères
+        </p>
+        <p class="help" [hidden]="taskName.untouched || (!taskName.errors?.['pattern'])">
+            Le nom doit commencer par une majuscule
+        </p>
         <label for="task-name">Nom</label>
-        <input [(ngModel)]="task.name" name="name" id="task-name" required #taskName="ngModel">
+        <input [(ngModel)]="task.name" name="name" id="task-name" required #taskName="ngModel"
+            minlength="5" pattern="[A-Z].+"
+        >
     </div>
     <div>
         <label for="task-deadline">Échéance</label>
