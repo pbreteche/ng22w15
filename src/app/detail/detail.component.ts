@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
@@ -9,7 +9,7 @@ import { TitleService } from '../title.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit{
+export class DetailComponent implements OnInit, OnDestroy{
   task?: Task;
 
   constructor(
@@ -28,5 +28,9 @@ export class DetailComponent implements OnInit{
         }
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.title.defineTitle();
   }
 }

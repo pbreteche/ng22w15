@@ -13,7 +13,7 @@ export class TitleService {
     return this.titleSubject.asObservable();
   }
 
-  defineTitle(title: string) {
-    this.titleSubject.next(title);
+  defineTitle(title?: string) {
+    this.titleSubject.next(title || DEFAULT_TITLE);
   }
 }
