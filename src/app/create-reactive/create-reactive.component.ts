@@ -17,7 +17,7 @@ export class CreateReactiveComponent {
       Validators.minLength(5), 
       Validators.pattern(/[A-Z].+/)
     ]),
-    deadline: new FormControl('', minDate),
+    deadline: new FormControl('', minDate(new Date())),
     description: new FormControl('')
   })
 

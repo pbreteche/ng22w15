@@ -1,13 +1,16 @@
-import { AbstractControl, ValidationErrors } from "@angular/forms";
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
-export function minDate(control: AbstractControl): ValidationErrors | null {
-    if (!control.value) {
-        return null;
+export function minDate(floor: Date|string): ValidatorFn {
+    if (typeof floor === 'string') {
+        floor = new Date(floor);
     }
-    let now = new Date;
-    let dateValue = new Date(control.value);
 
-    console.log(now < dateValue);    
-
-    return now < dateValue ? null : { minDate: {value: control.value, now: now.toString()}}
+    return function (control: AbstractControl): ValidationErrors | null {
+        if (!control.value) {
+            return null;
+        }
+        let dateValue = new Date(control.value);
+    
+        return floor < dateValue ? null : { minDate: {value: control.value, floor: floor.toString()}}
+    }
 }
