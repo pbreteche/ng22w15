@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
@@ -23,7 +24,11 @@ import { MinDateDirective } from './min-date.directive';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: '', component: NavComponent},
+      {path: 'task/new', component: CreateTemplateComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
