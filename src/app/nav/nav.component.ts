@@ -9,13 +9,13 @@ import { TasksStorageService } from '../tasks-storage.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-  tasks: Task[];
+  tasks: Task[] = [];
 
   constructor(
     private storage: TasksStorageService,
     private selectedTaskService: SelectedTaskService
   ) {
-    this.tasks = storage.load();
+    storage.tasks.subscribe((tasks: Task[]) => this.tasks = tasks);
   }
   
   select(task: Task): void {
@@ -23,7 +23,6 @@ export class NavComponent {
   }
 
   delete(i: number): void {
-    this.tasks.splice(i, 1);
-    this.storage.save(this.tasks);
+    this.storage.delete(i);
   }
 }
