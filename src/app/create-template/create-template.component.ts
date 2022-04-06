@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SelectedTaskService } from '../selected-task.service';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
 
@@ -14,7 +13,6 @@ export class CreateTemplateComponent {
 
   constructor(
     private tasksStorage: TasksStorageService,
-    private selectedTask: SelectedTaskService
   ) {}
 
   save(): void {
@@ -22,7 +20,6 @@ export class CreateTemplateComponent {
       this.task.deadline = new Date(this.task.deadline);
     }
     this.tasksStorage.push(this.task);
-    this.selectedTask.select(this.task)
     this.task = new Task();
   }
 }

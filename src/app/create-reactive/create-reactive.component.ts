@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SelectedTaskService } from '../selected-task.service';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
 import { minDate } from '../validators/min-date';
@@ -23,7 +22,6 @@ export class CreateReactiveComponent {
 
   constructor(
     private tasksStorage: TasksStorageService,
-    private selectedTask: SelectedTaskService
   ) {}
 
   get name()  {
@@ -41,7 +39,6 @@ export class CreateReactiveComponent {
       task.deadline = new Date(task.deadline);
     }
     this.tasksStorage.push(task);
-    this.selectedTask.select(task);
     this.form.reset();
   }
 }

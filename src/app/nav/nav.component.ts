@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { SelectedTaskService } from '../selected-task.service';
+import { Component } from '@angular/core';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
 
@@ -13,13 +12,8 @@ export class NavComponent {
 
   constructor(
     private storage: TasksStorageService,
-    private selectedTaskService: SelectedTaskService
   ) {
     storage.tasks.subscribe((tasks: Task[]) => this.tasks = tasks);
-  }
-  
-  select(task: Task): void {
-    this.selectedTaskService.select(task);
   }
 
   delete(i: number): void {
