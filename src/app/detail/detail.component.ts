@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
+import { TitleService } from '../title.service';
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,8 @@ export class DetailComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute, 
-    private storage: TasksStorageService
+    private storage: TasksStorageService,
+    private title: TitleService
   ) {}
 
   ngOnInit(): void {
@@ -21,6 +23,9 @@ export class DetailComponent implements OnInit{
       let idParam = params.get('id');
       if (idParam != null) {
         this.task = this.storage.find(+idParam)
+        if (typeof this.task?.name === 'string' ) {
+          this.title.defineTitle(this.task.name);
+        }
       }
     });
   }

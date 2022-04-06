@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TitleService } from '../title.service';
 
 @Component({
   selector: 'app-title',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent {
-  title = 'Liste de tâches';
+  title = '';
+
+  constructor(titleService: TitleService) {
+    titleService.title.subscribe(title => this.title = title)
+  }
 }
