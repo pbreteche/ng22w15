@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Task } from '../task';
+import { Task, TaskState } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { TasksStorageService } from '../tasks-storage.service';
 })
 export class NavComponent {
   tasks: Task[] = [];
+  filter = 'Tous'; 
+  stateOptions = ['Tous', TaskState.New, TaskState.InProgress, TaskState.Closed];
 
   constructor(
     private storage: TasksStorageService,
@@ -16,7 +18,15 @@ export class NavComponent {
     storage.tasks.subscribe((tasks: Task[]) => this.tasks = tasks);
   }
 
+  get filteredTasks(): Task[] {
+    return this.tasks.filter(t => 'Tous' == this.filter || t.state == this.filter)
+  }
+
   delete(i: number): void {
     this.storage.delete(i);
+  }
+
+  setFilter(e: any) {
+    this.filter = e;
   }
 }
