@@ -10,6 +10,7 @@ import { TasksStorageService } from '../tasks-storage.service';
 })
 export class CreateTemplateComponent {
   task = new Task();
+  now = new Date();
 
   constructor(
     private tasksStorage: TasksStorageService,

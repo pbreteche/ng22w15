@@ -15,8 +15,13 @@
         >
     </div>
     <div>
+        <p class="help" [hidden]="taskDeadline.untouched || (!taskDeadline.errors?.['minDate'])">
+            Le date doit être à venir
+        </p>
         <label for="task-deadline">Échéance</label>
-        <input [(ngModel)]="task.deadline" name="deadline" id="task-deadline" type="date">
+        <input [(ngModel)]="task.deadline" name="deadline" id="task-deadline" type="date"
+            [appMinDate]="now" #taskDeadline="ngModel"
+        >
     </div>
     <div>
         <label for="task-description">Description</label>

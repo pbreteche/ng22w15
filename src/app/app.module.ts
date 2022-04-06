@@ -8,6 +8,7 @@ import { TitleComponent } from './title/title.component';
 import { NavComponent } from './nav/nav.component';
 import { CreateTemplateComponent } from './create-template/create-template.component';
 import { CreateReactiveComponent } from './create-reactive/create-reactive.component';
+import { MinDateDirective } from './min-date.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreateReactiveComponent } from './create-reactive/create-reactive.compo
     TitleComponent,
     NavComponent,
     CreateTemplateComponent,
-    CreateReactiveComponent
+    CreateReactiveComponent,
+    MinDateDirective
   ],
   imports: [
     BrowserModule,
