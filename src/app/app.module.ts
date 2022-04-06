@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -7,6 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 import { TitleComponent } from './title/title.component';
 import { NavComponent } from './nav/nav.component';
 import { CreateTemplateComponent } from './create-template/create-template.component';
+import { CreateReactiveComponent } from './create-reactive/create-reactive.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,13 @@ import { CreateTemplateComponent } from './create-template/create-template.compo
     DetailComponent,
     TitleComponent,
     NavComponent,
-    CreateTemplateComponent
+    CreateTemplateComponent,
+    CreateReactiveComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

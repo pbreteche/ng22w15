@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+    <div>
+
+        <p class="help" [hidden]="name?.untouched || (!name?.errors?.['required'])">
+            Le nom est obligatoire
+        </p>
+        <p class="help" [hidden]="name?.untouched || (!name?.errors?.['minlength'])">
+            Le nom doit comporter au moins 5 caractères
+        </p>
+        <p class="help" [hidden]="name?.untouched || (!name?.errors?.['pattern'])">
+            Le nom doit commencer par une majuscule
+        </p>
+        <label for="task-name">Nom</label>
+        <input name="name" id="task-name" formControlName="name"
+        >
+    </div>
+    <div>
+        <label for="task-deadline">Échéance</label>
+        <input name="deadline" id="task-deadline" type="date" formControlName="deadline">
+    </div>
+    <div>
+        <label for="task-description">Description</label>
+        <textarea name="description" id="task-description" formControlName="description">
+        </textarea>
+    </div>
+    <button [disabled]="form.invalid">Ajouter</button>
+</form>
+
+<div class="debug">{{ form.value| json }}</div>
