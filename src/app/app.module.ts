@@ -28,6 +28,7 @@ import { MinDateDirective } from './min-date.directive';
     RouterModule.forRoot([
       {path: '', component: NavComponent, pathMatch: 'full'},
       {path: 'task/new', component: CreateTemplateComponent, pathMatch: 'full'},
+      {path: 'task/:id', component: DetailComponent, pathMatch: 'full'},
     ])
   ],
   providers: [],

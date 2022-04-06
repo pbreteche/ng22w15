@@ -4,6 +4,7 @@ import { tasks as tasksMock } from 'src/mock/tasks';
 import { Task } from './task';
 
 const TASKS_ITEM = 'app.tasks';
+const TASKS_NEXT_ID = 'app.task_next_id';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class TasksStorageService {
     let taskString = localStorage.getItem(TASKS_ITEM);
     if (!taskString) {
       this.tasksArray = tasksMock;
+      localStorage.setItem(TASKS_NEXT_ID, '5');
     } else {
       this.tasksArray = JSON.parse(taskString).map((task: Task) => {
         if (task.deadline) {
@@ -43,8 +45,20 @@ export class TasksStorageService {
     this.tasksSubject.next(this.tasksArray);
   }
 
+  find(id: number): Task | undefined {
+    if (!this.loaded) {
+      this.load();
+      this.loaded = true;
+    }
+
+    return this.tasksArray.find(task => task.id == id);
+  }
+
   push(task: Task): void {
+    let nextId = localStorage.getItem(TASKS_NEXT_ID);
+    task.id = nextId ? +nextId : 1;
     this.tasksArray.push(task);
+    localStorage.setItem(TASKS_NEXT_ID, '' + (task.id + 1))
     this.save();
   }
 

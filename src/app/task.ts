@@ -5,6 +5,7 @@ export enum TaskState {
 }
 
 export class Task {
+    id?: number;
     name?: string;
     deadline?: Date;
     description?: string;
