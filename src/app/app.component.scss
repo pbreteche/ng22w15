@@ -16,8 +16,13 @@ ul {
         cursor: pointer;
         color: inherit;
         text-decoration: none;
+        
         &:hover {
             text-decoration: underline dotted;
+        }
+
+        &.active {
+            background-color: #dba;
         }
     }
 }

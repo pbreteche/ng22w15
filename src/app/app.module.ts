@@ -26,8 +26,8 @@ import { MinDateDirective } from './min-date.directive';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: NavComponent},
-      {path: 'task/new', component: CreateTemplateComponent},
+      {path: '', component: NavComponent, pathMatch: 'full'},
+      {path: 'task/new', component: CreateTemplateComponent, pathMatch: 'full'},
     ])
   ],
   providers: [],

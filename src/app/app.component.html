@@ -1,8 +1,16 @@
 <app-title></app-title>
 <nav>
     <ul>
-        <li><a routerLink="/">Liste</a></li>
-        <li><a routerLink="/task/new">Nouveau</a></li>
+        <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                Liste
+            </a>
+        </li>
+        <li>
+            <a routerLink="/task/new" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                Nouveau
+            </a>
+        </li>
     </ul>
 </nav>
 <router-outlet></router-outlet>
