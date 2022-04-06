@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectedTaskService } from '../selected-task.service';
 import { Task } from '../task';
 import { TasksStorageService } from '../tasks-storage.service';
+import { minDate } from '../validators/min-date';
 
 @Component({
   selector: 'app-create-reactive',
@@ -16,7 +17,7 @@ export class CreateReactiveComponent {
       Validators.minLength(5), 
       Validators.pattern(/[A-Z].+/)
     ]),
-    deadline: new FormControl(''),
+    deadline: new FormControl('', minDate),
     description: new FormControl('')
   })
 
@@ -27,6 +28,10 @@ export class CreateReactiveComponent {
 
   get name()  {
     return this.form.get('name')
+  }
+
+  get deadline()  {
+    return this.form.get('deadline')
   }
 
   save(): void {

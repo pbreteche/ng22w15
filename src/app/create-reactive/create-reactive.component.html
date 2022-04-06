@@ -11,10 +11,12 @@
             Le nom doit commencer par une majuscule
         </p>
         <label for="task-name">Nom</label>
-        <input name="name" id="task-name" formControlName="name"
-        >
+        <input name="name" id="task-name" formControlName="name">
     </div>
     <div>
+        <p class="help" [hidden]="deadline?.untouched || (!deadline?.errors?.['minDate'])">
+            La date ne doit pas être passée
+        </p>
         <label for="task-deadline">Échéance</label>
         <input name="deadline" id="task-deadline" type="date" formControlName="deadline">
     </div>
@@ -25,5 +27,3 @@
     </div>
     <button [disabled]="form.invalid">Ajouter</button>
 </form>
-
-<div class="debug">{{ form.value| json }}</div>
