@@ -1,0 +1,14 @@
+<article *ngIf="project; else waiting">
+    <h1>{{ project.title }}</h1>
+    <p>{{ project.description }}</p>
+    <nav>
+        <h2>Tâches</h2>
+        <ul>
+            <li *ngFor="let task of project.tasks">
+               <a [routerLink]="['task', task.id]">{{ task.name }}</a>
+            </li>
+        </ul>
+    </nav>
+</article>
+<ng-template #waiting>Chargement...</ng-template>
+<nav><a routerLink="">Retour</a></nav>

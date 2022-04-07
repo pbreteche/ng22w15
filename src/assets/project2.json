@@ -1,0 +1,12 @@
+{
+    "id": 2,
+    "title": "Back-office",
+    "description": "L\"interface d\"adminstration",
+    "tasks": [{
+        "id": 4,
+        "name": "ng new my-project",
+        "deadline": "2022-04-06",
+        "description": "Le projet lui-même",
+        "state": "Nouveau"
+    }]
+}

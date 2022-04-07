@@ -1,5 +1,8 @@
-[
-    {
+{
+    "id": 1,
+    "title": "Front-office",
+    "description": "La vitrine accessible par les clients",
+    "tasks": [{
         "id": 1,
         "name": "installer NodeJS",
         "deadline": "2022-04-04",
@@ -19,12 +22,5 @@
         "deadline": null,
         "description": "Le couteau suisse d\"Angular",
         "state": "Nouveau"
-    },
-    {
-        "id": 4,
-        "name": "ng new my-project",
-        "deadline": "2022-04-06",
-        "description": "Le projet lui-même",
-        "state": "Nouveau"
-    }
-]
+    }]
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Project } from '../model/project';
-import { ProjectsStorageService } from '../service/projects-storage.service';
+import { Project } from '../../model/project';
+import { ProjectsStorageService } from '../../service/projects-storage.service';
 
 @Component({
   selector: 'app-home-page',
