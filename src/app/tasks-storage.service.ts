@@ -69,6 +69,7 @@ export class TasksStorageService {
     task.id = nextId ? +nextId : 1;
     this.tasksArray.push(task);
     localStorage.setItem(TASKS_NEXT_ID, '' + (task.id + 1))
+    this.http.post(task);
     this.save();
   }
 
