@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { tasks as tasksMock } from 'src/mock/tasks';
 import { Task } from './task';
+import { TaskHttpService } from './task-http.service';
 
 const TASKS_ITEM = 'app.tasks';
 const TASKS_NEXT_ID = 'app.task_next_id';
@@ -13,6 +13,8 @@ export class TasksStorageService {
   private loaded = false;
   private tasksArray: Task[] = [];
   private tasksSubject = new BehaviorSubject<Task[]>(this.tasksArray);
+
+  constructor(private http: TaskHttpService) {}
   
   get tasks() {
     if (!this.loaded) {
@@ -26,7 +28,10 @@ export class TasksStorageService {
   private load() {
     let taskString = localStorage.getItem(TASKS_ITEM);
     if (!taskString) {
-      this.tasksArray = tasksMock;
+      this.http.load().subscribe(tasks => {
+        this.tasksArray = tasks
+        this.tasksSubject.next(this.tasksArray);
+      });
       localStorage.setItem(TASKS_NEXT_ID, '5');
     } else {
       this.tasksArray = JSON.parse(taskString).map((task: Task) => {

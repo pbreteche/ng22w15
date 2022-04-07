@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "installer NodeJS",
+        "deadline": "2022-04-04",
+        "description": "Nécessaire à l\"environnement",
+        "state": "En cours"
+    },
+    {
+        "id": 2,
+        "name": "installer un éditeur",
+        "deadline": null,
+        "description": "Pour le développeur",
+        "state": "Nouveau"
+    },
+    {
+        "id": 3,
+        "name": "npm install -g @angular/cli",
+        "deadline": null,
+        "description": "Le couteau suisse d\"Angular",
+        "state": "Nouveau"
+    },
+    {
+        "id": 4,
+        "name": "ng new my-project",
+        "deadline": "2022-04-06",
+        "description": "Le projet lui-même",
+        "state": "Nouveau"
+    }
+]
