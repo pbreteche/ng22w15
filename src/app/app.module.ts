@@ -12,6 +12,7 @@ import { CreateTemplateComponent } from './component/create-template/create-temp
 import { CreateReactiveComponent } from './component/create-reactive/create-reactive.component';
 import { MinDateDirective } from './validators/min-date.directive';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     CreateTemplateComponent,
     CreateReactiveComponent,
     MinDateDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: NavComponent, pathMatch: 'full'},
+      {path: '', component: HomePageComponent, pathMatch: 'full'},
       {path: 'task/new', component: CreateTemplateComponent, pathMatch: 'full'},
       {path: 'task/:id', component: DetailComponent, pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent}

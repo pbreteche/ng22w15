@@ -2,6 +2,19 @@ body {
     margin: 0;
     padding: 0;
 }
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &.btn {
+        display: inline-block;
+        margin: .5em;
+        padding: .5em;
+        border-radius: .25em;;
+    }
+}
+
 .header {
     background-color: #123;
     color: #fed;

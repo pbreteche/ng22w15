@@ -1,0 +1,10 @@
+ul {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+    li a {
+        border: 1px solid black;
+        background-color: #abc;
+    }
+}
