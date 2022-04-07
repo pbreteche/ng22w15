@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Task } from '../task';
-import { TasksStorageService } from '../tasks-storage.service';
+import { Task } from '../../model/task';
+import { TasksStorageService } from '../../service/tasks-storage.service';
 
 @Component({
   selector: 'app-create-template',

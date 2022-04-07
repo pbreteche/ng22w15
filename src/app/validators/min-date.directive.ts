@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
-import { minDate } from './validators/min-date';
+import { minDate } from './min-date';
 
 @Directive({
   selector: '[appMinDate]',

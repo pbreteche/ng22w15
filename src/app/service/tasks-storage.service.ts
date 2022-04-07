@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, of } from 'rxjs';
 import { tasksMock } from 'src/mock/tasks';
-import { Task } from './task';
+import { Task } from '../model/task';
 import { TaskHttpService } from './task-http.service';
 
 const TASKS_ITEM = 'app.tasks';

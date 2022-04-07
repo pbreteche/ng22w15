@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Task, TaskState } from '../task';
-import { TasksStorageService } from '../tasks-storage.service';
+import { Task, TaskState } from '../../model/task';
+import { TasksStorageService } from '../../service/tasks-storage.service';
 
 @Component({
   selector: 'app-nav',

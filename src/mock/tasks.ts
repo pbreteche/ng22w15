@@ -1,4 +1,4 @@
-import { Task, TaskState } from "src/app/task";
+import { Task, TaskState } from "src/app/model/task";
 
 export const tasksMock: Task[] = [
     {

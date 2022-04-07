@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Task } from '../task';
-import { TasksStorageService } from '../tasks-storage.service';
-import { minDate } from '../validators/min-date';
+import { Task } from '../../model/task';
+import { TasksStorageService } from '../../service/tasks-storage.service';
+import { minDate } from '../../validators/min-date';
 
 @Component({
   selector: 'app-create-reactive',

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Task } from '../task';
-import { TasksStorageService } from '../tasks-storage.service';
-import { TitleService } from '../title.service';
+import { Task } from '../../model/task';
+import { TasksStorageService } from '../../service/tasks-storage.service';
+import { TitleService } from '../../title.service';
 
 @Component({
   selector: 'app-detail',
