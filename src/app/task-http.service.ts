@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, firstValueFrom, map, Observable, throwError } from 'rxjs';
 import { Task } from './task';
 
 @Injectable({
@@ -29,6 +29,17 @@ export class TaskHttpService {
         })
       )
     ;
+  }
+
+  async loadWithPromise(): Promise<Task[]> {
+    const data: any = await firstValueFrom(this.http.get('/assets/tasks.json'));
+    return data.map((task: Task) => {
+      if (task.deadline) {
+        task.deadline = new Date(task.deadline);
+      }
+
+      return task;
+    });
   }
 
   post(task: Task) {

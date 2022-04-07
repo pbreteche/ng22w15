@@ -26,6 +26,10 @@ export class TasksStorageService {
     return this.tasksSubject.asObservable();
   }
 
+  private async loadWithPromise() {
+    this.tasksArray = await this.http.loadWithPromise();
+  }
+
   private load() {
     let taskString = localStorage.getItem(TASKS_ITEM);
     if (!taskString) {
