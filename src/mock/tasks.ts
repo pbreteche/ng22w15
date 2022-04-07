@@ -1,6 +1,6 @@
 import { Task, TaskState } from "src/app/task";
 
-export const tasks: Task[] = [
+export const tasksMock: Task[] = [
     {
         id: 1,
         name: 'installer NodeJS',
