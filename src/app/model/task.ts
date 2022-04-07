@@ -1,3 +1,5 @@
+import { Project } from "./project";
+
 export enum TaskState {
     New = 'Nouveau',
     InProgress = 'En cours',
@@ -10,4 +12,5 @@ export class Task {
     deadline?: Date;
     description?: string;
     state = TaskState.New;
+    project?: Project|number;
 }
