@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { ProjectTaskComponent } from './component/project-task/project-task.component';
 import { TrPipe } from './pipe/tr.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TrPipe } from './pipe/tr.pipe';
     PageNotFoundComponent,
     HomePageComponent,
     ProjectTaskComponent,
-    TrPipe
+    TrPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
