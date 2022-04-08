@@ -13,6 +13,7 @@ import { CreateReactiveComponent } from './component/create-reactive/create-reac
 import { MinDateDirective } from './validators/min-date.directive';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
+import { ProjectTaskComponent } from './component/project-task/project-task.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     CreateReactiveComponent,
     MinDateDirective,
     PageNotFoundComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProjectTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +35,15 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', component: HomePageComponent, pathMatch: 'full'},
-      {path: 'projet/:project_id', component: ProjectComponent, pathMatch: 'full'},
-      {path: 'projet/:project_id/task/new', component: CreateTemplateComponent, pathMatch: 'full'},
-      {path: 'projet/:project_id/task/:id', component: DetailComponent, pathMatch: 'full'},
+      {
+        path: 'projet/:project_id',
+        component: ProjectComponent,
+        children: [
+          {path: 'taches', component: ProjectTaskComponent},
+          {path: 'tache/nouvelle', component: CreateTemplateComponent},
+          {path: 'taches/:id', component: DetailComponent},
+        ]
+      },
       {path: '**', component: PageNotFoundComponent}
     ])
   ],
