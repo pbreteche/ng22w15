@@ -18,6 +18,7 @@ import { ProjectTaskComponent } from './component/project-task/project-task.comp
 import { TrPipe } from './pipe/tr.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { UnlessDirective } from './unless.directive';
+import { KanbanComponent } from './component/kanban/kanban.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UnlessDirective } from './unless.directive';
     ProjectTaskComponent,
     TrPipe,
     HighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    KanbanComponent
   ],
   imports: [
     BrowserModule,

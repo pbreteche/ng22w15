@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let state of taskByState.keys()">{{state}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td *ngFor="let tasks of taskByState.values()">
+                <div class="card" *ngFor="let task of tasks">
+                    {{task.name}}
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

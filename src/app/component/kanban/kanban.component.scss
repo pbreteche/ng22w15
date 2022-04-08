@@ -1,0 +1,23 @@
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-spacing: 1em;
+
+    th, td {
+        border: 1px solid #333;
+    }
+    th {
+        font-size: larger;
+        padding: .5em;
+        background-color: #123;
+        color: #fed;
+    }
+}
+
+.card {
+  padding: 1em;
+  margin: 1em;
+  box-shadow: 0 0 .5em black;
+  border-radius: .25em;
+  background-color: #ffa;
+}
