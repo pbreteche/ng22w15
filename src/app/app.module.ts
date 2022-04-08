@@ -17,6 +17,7 @@ import { HomePageComponent } from './component/home-page/home-page.component';
 import { ProjectTaskComponent } from './component/project-task/project-task.component';
 import { TrPipe } from './pipe/tr.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HighlightDirective } from './highlight.directive';
     HomePageComponent,
     ProjectTaskComponent,
     TrPipe,
-    HighlightDirective
+    HighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
