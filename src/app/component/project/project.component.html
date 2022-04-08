@@ -1,5 +1,5 @@
 <article *ngIf="project; else waiting">
-    <h1>{{ project.title }}</h1>
+    <h1>{{ project.title | tr }}</h1>
     <p>{{ project.description }}</p>
     <nav>
         <ul>

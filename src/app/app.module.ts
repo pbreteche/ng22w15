@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import '@angular/common/locales/global/fr';
 
 import { AppComponent } from './component/app.component';
 import { DetailComponent } from './component/detail/detail.component';
@@ -14,6 +15,7 @@ import { MinDateDirective } from './validators/min-date.directive';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { ProjectTaskComponent } from './component/project-task/project-task.component';
+import { TrPipe } from './pipe/tr.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ProjectTaskComponent } from './component/project-task/project-task.comp
     MinDateDirective,
     PageNotFoundComponent,
     HomePageComponent,
-    ProjectTaskComponent
+    ProjectTaskComponent,
+    TrPipe
   ],
   imports: [
     BrowserModule,
